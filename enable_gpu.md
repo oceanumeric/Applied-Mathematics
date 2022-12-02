@@ -52,3 +52,9 @@ Then
 
 After activating the virtual environment, you can install `Pytorch` and `JAX` by
 following the official guidance. 
+
+## `code-runner` does not work for `JAX`
+
+I don't know why `jupyter notebook` and `code-runner` in VScode could not
+run the script, whereas the script would be run via command line without 
+returning any error. 

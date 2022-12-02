@@ -58,3 +58,7 @@ following the official guidance.
 I don't know why `jupyter notebook` and `code-runner` in VScode could not
 run the script, whereas the script would be run via command line without 
 returning any error. 
+
+## Never name file with the same name of packages
+
+Very bad ideas to call a test file like `pytorch.py`

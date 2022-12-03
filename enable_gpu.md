@@ -59,6 +59,8 @@ I don't know why `jupyter notebook` and `code-runner` in VScode could not
 run the script, whereas the script would be run via command line without 
 returning any error. 
 
+Then I changed the running path by putting a `settings.json` into `.vscode`. 
+
 ## Never name file with the same name of packages
 
 Very bad ideas to call a test file like `pytorch.py`

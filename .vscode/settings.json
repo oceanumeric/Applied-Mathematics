@@ -1,0 +1,8 @@
+{
+    // change coder runner for this working place 
+    "code-runner.executorMap": {
+        "python": "$pythonPath $fullFileName",
+    },
+    "code-runner.runInTerminal": true
+}
+    

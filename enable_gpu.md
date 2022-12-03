@@ -53,6 +53,14 @@ Then
 After activating the virtual environment, you can install `Pytorch` and `JAX` by
 following the official guidance. 
 
+Install jupyter kernel
+
+`pip install --user ipykernel`
+
+Then create a kernel within virtual environment
+
+`python -m ipykernel install --user --name=myvenv`
+
 ## `code-runner` does not work for `JAX`
 
 I don't know why `jupyter notebook` and `code-runner` in VScode could not
@@ -64,3 +72,43 @@ Then I changed the running path by putting a `settings.json` into `.vscode`.
 ## Never name file with the same name of packages
 
 Very bad ideas to call a test file like `pytorch.py`
+
+## GPU memory could be used up easily 
+
+Check GPU usage 
+
+`nvidia-smi`
+
+You might need to kill process (replace YourPID)
+
+```
+sudo kill -9 YourPID
+```
+
+## Set GPU memory usage
+
+```python
+import os
+os.environ['XLA_PYTHON_CLIENT_PREALLOCATE']='false'
+os.environ['XLA_PYTHON_CLIENT_MEM_FRACTION']='.30'
+``` 
+
+### GPU memory allocation
+
+JAX will preallocate 90% of the total GPU memory when the first JAX operation is run. Preallocating minimizes allocation overhead and memory fragmentation, but can sometimes cause out-of-memory (OOM) errors. If your JAX process fails with OOM, the following environment variables can be used to override the default behavior:
+
+`XLA_PYTHON_CLIENT_PREALLOCATE=false`
+
+This disables the preallocation behavior. JAX will instead allocate GPU memory as needed, potentially decreasing the overall memory usage. However, this behavior is more prone to GPU memory fragmentation, meaning a JAX program that uses most of the available GPU memory may OOM with preallocation disabled.
+
+`XLA_PYTHON_CLIENT_MEM_FRACTION=.XX`
+
+If preallocation is enabled, this makes JAX preallocate XX% of the total GPU memory, instead of the default 90%. Lowering the amount preallocated can fix OOMs that occur when the JAX program starts.
+
+`XLA_PYTHON_CLIENT_ALLOCATOR=platform`
+
+This makes JAX allocate exactly what is needed on demand, and deallocate memory that is no longer needed (note that this is the only configuration that will deallocate GPU memory, instead of reusing it). This is very slow, so is not recommended for general use, but may be useful for running with the minimal possible GPU memory footprint or debugging OOM failures.
+
+## Check your hardware
+
+`lspci -v` 

@@ -79,6 +79,10 @@ Check GPU usage
 
 `nvidia-smi`
 
+or 
+
+`nvidia-smi -L`
+
 You might need to kill process (replace YourPID)
 
 ```

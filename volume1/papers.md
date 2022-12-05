@@ -11,3 +11,5 @@
 4. LA notes: https://www.cs.utexas.edu/users/flame/laff/alaff-beta/chapter03-householder-transformation.html
 
 5. Bézier Curves: https://pomax.github.io/bezierinfo/
+
+6. Gram-Schmidt Orthogonalization: https://www.math.usm.edu/lambers/mat610/class0215.pdf

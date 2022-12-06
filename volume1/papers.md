@@ -13,3 +13,7 @@
 5. Bézier Curves: https://pomax.github.io/bezierinfo/
 
 6. Gram-Schmidt Orthogonalization: https://www.math.usm.edu/lambers/mat610/class0215.pdf
+
+7. Math344: https://math.byu.edu/~bakker/Math344/Lectures/
+
+8. QR: https://www.cs.cornell.edu/~bindel/class/cs6210-f09/lec18.pdf

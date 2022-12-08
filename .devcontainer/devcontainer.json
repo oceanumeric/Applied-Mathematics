@@ -1,6 +1,19 @@
 {
+    "name": "InnoLab",
     "image": "vsc-cuda-container-92f8d0bcb7ce38ae6a144f94ac61d015",
-
+    "runArgs": [
+        "--gpus",
+        "all",
+        "--ipc=host",  // provides a way to speed up inter-process communication. 
+        "--ulimit",   // calls the ulimit linux command and set memlock=-1 means no limit for memory lock.
+        "memlock=-1", 
+        "--ulimit", 
+        "stack=67108864", // this sets the stack size and it's specific to my host machine.
+        "--shm-size",  // make it bigger for neural network model 
+        "8gb",
+        "-it",  // input and output stream 
+        "--rm"  // clean cache 
+    ], 
     "customizations": {
         "vscode": {
           "extensions": [
@@ -19,7 +32,5 @@
             ]
         }
       },
-
       "forwardPorts": [6767]
-
 }

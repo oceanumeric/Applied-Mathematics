@@ -9,5 +9,7 @@ import matplotlib.pyplot as plt
 
 \mathbb{R}
 
+\mathbb{C}
+
 
 \mathbb{N}

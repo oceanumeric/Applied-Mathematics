@@ -2,6 +2,14 @@
 
 Foundations of Applied Mathematics
 
+## Setup memory 
+
+```bash
+export XLA_PYTHON_CLIENT_MEM_FRACTION=0.5
+```
+
+__You do not need the container__ after setting the memory allocation. 
+
 ## Open port on docker container
 
 ```bash

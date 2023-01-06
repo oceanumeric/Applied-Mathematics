@@ -13,3 +13,9 @@ import matplotlib.pyplot as plt
 
 
 \mathbb{N}
+
+
+lu1 = mplt.image.imread("../images/lu-illustration1.png")
+plt.imshow(lu1)
+plt.axis('off')
+plt.savefig("../images/test.svg", dpi=300, bbox_inches='tight')

@@ -14,6 +14,10 @@ import matplotlib.pyplot as plt
 
 \mathbb{N}
 
+\mathbb{P}
+
+\mathrm{E}
+
 
 fig, ax = plt.subplots(1, 1, figsize=(8, 8))
 lu1 = mplt.image.imread("../images/lu-iteration.png")
